@@ -7,13 +7,16 @@ function App() {
   const ops = ['/','*', '+', '-', '.'];
 
   const updateCalc = value =>{
+    // eslint-disable-next-line no-mixed-operators
     if(ops.includes(value) && calc === " " ||
+      // eslint-disable-next-line no-mixed-operators
       ops.includes(value) && ops.includes(calc.slice(-1))){
         return;
       }
     setCalc(calc +value);
 
     if(!ops.includes(value)){
+      // eslint-disable-next-line no-eval
       setResult(eval(calc+value).toString());
     }
   }
@@ -31,6 +34,7 @@ function App() {
   }
 
   const calculate =()=>{
+    // eslint-disable-next-line no-eval
     setCalc(eval(calc).toString());
   }
 
